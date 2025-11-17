@@ -1,0 +1,16 @@
+Job Title: AI Engineer
+
+Responsibilities:
+- Design, develop, and deploy AI and machine learning models.
+- Work with large datasets to extract meaningful insights.
+- Collaborate with software engineers and data scientists to integrate AI solutions into products.
+- Maintain and improve existing AI models and pipelines.
+- Research and implement state-of-the-art AI algorithms and techniques.
+
+Requirements:
+- Strong knowledge of machine learning and deep learning techniques.
+- Experience with Python and AI frameworks such as TensorFlow, PyTorch, or scikit-learn.
+- Familiarity with NLP, computer vision, or reinforcement learning.
+- Solid understanding of data structures, algorithms, and statistics.
+- Experience with cloud platforms like AWS, GCP, or Azure is a plus.
+- Strong problem-solving skills and ability to work in a collaborative environment.
