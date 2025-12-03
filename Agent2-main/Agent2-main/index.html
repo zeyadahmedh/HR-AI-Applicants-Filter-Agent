@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentHub AI - Join Our Team</title>
+    <meta name="description" content="Apply for exciting career opportunities. Your application will be stored in our AI-powered system for processing.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            --primary-glow: 221.2 83.2% 63.3%;
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --success: 142.1 76.2% 36.3%;
+            --success-foreground: 355.7 100% 97.3%;
+            --warning: 38 92% 50%;
+            --warning-foreground: 48 96% 89%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+            --radius: 0.5rem;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --primary-glow: 217.2 91.2% 69.8%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --success: 142.1 70.6% 45.3%;
+            --success-foreground: 144.9 80.4% 10%;
+            --warning: 48 96% 53%;
+            --warning-foreground: 38 92% 50%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 224.3 76.3% 48%;
+        }
+
+        /* Custom utility classes */
+        .bg-primary { background-color: hsl(var(--primary)); }
+        .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+        .border-border { border-color: hsl(var(--border)); }
+        .bg-background { background-color: hsl(var(--background)); }
+        .text-foreground { color: hsl(var(--foreground)); }
+        .bg-card { background-color: hsl(var(--card)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .bg-destructive { background-color: hsl(var(--destructive)); }
+        .text-destructive-foreground { color: hsl(var(--destructive-foreground)); }
+        .bg-success { background-color: hsl(var(--success)); }
+        .text-success-foreground { color: hsl(var(--success-foreground)); }
+        .bg-warning { background-color: hsl(var(--warning)); }
+        .text-warning-foreground { color: hsl(var(--warning-foreground)); }
+        .bg-accent { background-color: hsl(var(--accent)); }
+        
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        
+        /* Custom styles */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(30, 30, 30, 0.7);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed hsl(var(--border));
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-area:hover {
+            border-color: hsl(var(--primary));
+            background-color: hsl(var(--primary) / 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-border glass-effect">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                        <i class="fas fa-briefcase text-primary-foreground text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">
+                        TalentHub AI
+                    </span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-muted-foreground hover:text-foreground transition-colors">Features</a>
+                    <a href="#apply" class="text-muted-foreground hover:text-foreground transition-colors">Apply</a>
+                    <a href="#status" class="text-muted-foreground hover:text-foreground transition-colors">Status</a>
+                </nav>
+                <button id="themeToggle" class="p-2 rounded-lg bg-accent hover:bg-accent/80 transition-colors">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Join Our <span class="gradient-text">Innovative</span> Team
+            </h1>
+            <p class="text-xl text-muted-foreground mb-8">
+                We're looking for passionate individuals to help us build the future. 
+                Your application will be stored in our AI-powered system and processed by our HR team.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#apply" class="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    Apply Now
+                </a>
+                <a href="#process" class="px-8 py-3 border border-border rounded-lg hover:bg-accent transition-colors font-medium">
+                    How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Apply With Us?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-database text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">AI-Powered Storage</h3>
+                <p class="text-muted-foreground">Your application is stored in a smart vector database for optimal processing</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Secure Processing</h3>
+                <p class="text-muted-foreground">Your data is securely stored and only accessible to authorized HR personnel</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-bolt text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Fast Processing</h3>
+                <p class="text-muted-foreground">Applications are processed quickly by our AI-powered HR system</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-envelope text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Quick Feedback</h3>
+                <p class="text-muted-foreground">You'll receive updates about your application status via email</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-card border border-border rounded-2xl p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-file-alt text-primary text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2">Submit Your Application</h2>
+                    <p class="text-muted-foreground">
+                        Your application will be stored in our Qdrant vector database for AI-powered processing
+                    </p>
+                </div>
+
+                <form id="applicationForm" class="space-y-6">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2 flex items-center gap-2">
+                            <i class="fas fa-user"></i>
+                            Full Name *
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="w-full px-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            placeholder="John Doe"
+                            required
+                        >
+                        <p class="text-xs text-muted-foreground mt-1">Your full name as it appears on your CV</p>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2 flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            Email Address *
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            class="w-full px-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+                            placeholder="john@example.com"
+                            required
+                        >
+                        <p class="text-xs text-muted-foreground mt-1">We'll send application updates to this email</p>
+                    </div>
+
+                    <!-- CV Upload -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 flex items-center gap-2">
+                            <i class="fas fa-file-pdf"></i>
+                            Upload CV (PDF only) *
+                        </label>
+                        <div class="file-upload-area rounded-lg p-8 text-center">
+                            <input
+                                type="file"
+                                id="cv"
+                                accept=".pdf"
+                                class="hidden"
+                            >
+                            <label for="cv" class="cursor-pointer">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-cloud-upload-alt text-primary text-xl"></i>
+                                </div>
+                                <p id="fileName" class="font-medium mb-1">Click to upload PDF</p>
+                                <p class="text-sm text-muted-foreground">Max 5MB • PDF files only</p>
+                            </label>
+                        </div>
+                        <p class="text-xs text-muted-foreground mt-1">Your CV will be stored securely in our vector database</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        id="submitBtn"
+                        class="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+
+                    <!-- Status Message -->
+                    <div id="statusMessage" class="hidden p-4 rounded-lg flex items-center gap-3 animate-fadeIn">
+                        <i id="statusIcon" class="text-xl"></i>
+                        <div>
+                            <p id="statusTitle" class="font-medium"></p>
+                            <p id="statusDescription" class="text-sm"></p>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Data Storage Notice -->
+                <div class="mt-6 p-4 bg-secondary/30 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-info-circle text-primary mt-0.5"></i>
+                        <div>
+                            <p class="text-sm text-muted-foreground">
+                                <strong>Data Storage Notice:</strong> Your application will be stored in our Qdrant vector database. 
+                                The HR team will access your application from this database for processing. 
+                                Your PDF is converted to base64 and stored with AI-generated embeddings for efficient searching.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">How Your Application is Processed</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Submit Application</h3>
+                    <p class="text-muted-foreground">You fill the form and upload your CV. Data is sent to our backend.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Store in Qdrant</h3>
+                    <p class="text-muted-foreground">Your application is stored in Qdrant with AI embeddings for smart retrieval.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">HR Processing</h3>
+                    <p class="text-muted-foreground">HR system reads from Qdrant, filters candidates, and contacts you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Status -->
+    <section id="status" class="container mx-auto px-4 py-16">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-card border border-border rounded-xl overflow-hidden">
+                <div class="p-6 border-b border-border bg-primary/10">
+                    <h3 class="font-bold text-lg flex items-center gap-2">
+                        <i class="fas fa-server"></i>
+                        System Status
+                    </h3>
+                    <p class="text-sm text-muted-foreground">Check if the application system is running</p>
+                </div>
+                
+                <div class="p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-database text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Application Portal</h4>
+                                <p class="text-sm text-muted-foreground">Backend API server</p>
+                            </div>
+                        </div>
+                        <span id="apiStatus" class="px-3 py-1 bg-warning/20 text-warning rounded-full text-sm font-medium">
+                            <i class="fas fa-sync-alt mr-1 animate-spin"></i> Checking...
+                        </span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-vector-square text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Qdrant Database</h4>
+                                <p class="text-sm text-muted-foreground">Vector storage system</p>
+                            </div>
+                        </div>
+                        <span id="qdrantStatus" class="px-3 py-1 bg-warning/20 text-warning rounded-full text-sm font-medium">
+                            <i class="fas fa-sync-alt mr-1 animate-spin"></i> Checking...
+                        </span>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <button id="refreshStatus" class="px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors text-sm">
+                            <i class="fas fa-redo mr-2"></i> Refresh Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border bg-card mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
+                        <i class="fas fa-briefcase text-primary-foreground text-sm"></i>
+                    </div>
+                    <span class="font-bold">TalentHub AI</span>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-muted-foreground">
+                        Powered by Qdrant Vector Database • AI-Powered Application System
+                    </p>
+                    <p class="text-xs text-muted-foreground mt-2">
+                        © <span id="currentYear"></span> TalentHub AI. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Configuration
+        const API_BASE_URL = 'https://f04ab44d-7efd-4966-8ba7-1e5334332422.eu-central-1-0.aws.cloud.qdrant.io';
+        
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const cvInput = document.getElementById('cv');
+        const fileName = document.getElementById('fileName');
+        const applicationForm = document.getElementById('applicationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const apiStatus = document.getElementById('apiStatus');
+        const qdrantStatus = document.getElementById('qdrantStatus');
+        const refreshStatusBtn = document.getElementById('refreshStatus');
+        const currentYear = document.getElementById('currentYear');
+
+        // Initialize
+        currentYear.textContent = new Date().getFullYear();
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.className = 'fas fa-sun';
+        }
+
+        // File Upload Handler
+        cvInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                
+                // Validate file type
+                if (file.type !== 'application/pdf') {
+                    showStatus('error', 'Invalid File Type', 'Please upload a PDF file only');
+                    this.value = '';
+                    fileName.textContent = 'Click to upload PDF';
+                    return;
+                }
+                
+                // Validate file size (5MB max)
+                if (file.size > 5 * 1024 * 1024) {
+                    showStatus('error', 'File Too Large', 'Maximum file size is 5MB');
+                    this.value = '';
+                    fileName.textContent = 'Click to upload PDF';
+                    return;
+                }
+                
+                fileName.textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+            }
+        });
+
+        // Show Status Message
+        function showStatus(type, title, description) {
+            const statusMessage = document.getElementById('statusMessage');
+            const statusIcon = document.getElementById('statusIcon');
+            const statusTitle = document.getElementById('statusTitle');
+            const statusDescription = document.getElementById('statusDescription');
+            
+            // Set colors and icon based on type
+            switch(type) {
+                case 'success':
+                    statusMessage.className = 'p-4 bg-success/10 border border-success/20 rounded-lg flex items-center gap-3 animate-fadeIn';
+                    statusIcon.className = 'fas fa-check-circle text-success text-xl';
+                    break;
+                case 'error':
+                    statusMessage.className = 'p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-center gap-3 animate-fadeIn';
+                    statusIcon.className = 'fas fa-exclamation-circle text-destructive text-xl';
+                    break;
+                case 'processing':
+                    statusMessage.className = 'p-4 bg-warning/10 border border-warning/20 rounded-lg flex items-center gap-3 animate-fadeIn';
+                    statusIcon.className = 'fas fa-spinner animate-spin text-warning text-xl';
+                    break;
+                case 'info':
+                    statusMessage.className = 'p-4 bg-primary/10 border border-primary/20 rounded-lg flex items-center gap-3 animate-fadeIn';
+                    statusIcon.className = 'fas fa-info-circle text-primary text-xl';
+                    break;
+            }
+            
+            statusTitle.textContent = title;
+            statusDescription.textContent = description;
+            statusMessage.classList.remove('hidden');
+            
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusMessage.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // Check System Health
+        async function checkSystemHealth() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // Update API status
+                    apiStatus.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Online';
+                    apiStatus.className = 'px-3 py-1 bg-success/20 text-success rounded-full text-sm font-medium';
+                    
+                    // Update Qdrant status
+                    if (data.qdrant?.connected && data.qdrant?.collection_exists) {
+                        qdrantStatus.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Connected';
+                        qdrantStatus.className = 'px-3 py-1 bg-success/20 text-success rounded-full text-sm font-medium';
+                    } else {
+                        qdrantStatus.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i> Issue';
+                        qdrantStatus.className = 'px-3 py-1 bg-warning/20 text-warning rounded-full text-sm font-medium';
+                    }
+                    
+                    return true;
+                }
+            } catch (error) {
+                console.warn('Health check failed:', error.message);
+                
+                // Update status indicators
+                apiStatus.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i> Offline';
+                apiStatus.className = 'px-3 py-1 bg-destructive/20 text-destructive rounded-full text-sm font-medium';
+                
+                qdrantStatus.innerHTML = '<i class="fas fa-question-circle mr-1"></i> Unknown';
+                qdrantStatus.className = 'px-3 py-1 bg-warning/20 text-warning rounded-full text-sm font-medium';
+            }
+            return false;
+        }
+
+        // Form Submission
+        applicationForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const cvFile = cvInput.files[0];
+            
+            // Validation
+            if (!name || !email || !cvFile) {
+                showStatus('error', 'Missing Information', 'Please fill all fields and upload your CV');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showStatus('error', 'Invalid Email', 'Please enter a valid email address');
+                return;
+            }
+            
+            // Disable submit button and show processing
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> Storing in Qdrant...';
+            submitBtn.disabled = true;
+            
+            // Check system health first
+            showStatus('processing', 'Checking System', 'Verifying connection to database...');
+            
+            const isSystemHealthy = await checkSystemHealth();
+            
+            if (!isSystemHealthy) {
+                showStatus('error', 'System Offline', 'Application system is currently unavailable. Please try again later.');
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                return;
+            }
+            
+            // Show processing status
+            showStatus('processing', 'Processing Application', 'Uploading PDF to Qdrant vector database...');
+            
+            try {
+                // Create FormData
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('cv', cvFile);
+                
+                // Send to backend
+                const response = await fetch(`${API_BASE_URL}/apply`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Failed to submit application');
+                }
+                
+                const result = await response.json();
+                
+                console.log('Application submitted:', result);
+                
+                // Show success
+                showStatus('success', 'Application Submitted Successfully!', 
+                    `Your application has been stored in Qdrant with ID: ${result.application_id}. 
+                     The HR team will process it shortly.`);
+                
+                // Reset form
+                this.reset();
+                fileName.textContent = 'Click to upload PDF';
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                
+                // Show error
+                showStatus('error', 'Submission Failed', 
+                    error.message || 'There was an error processing your application. Please try again.');
+                    
+            } finally {
+                // Re-enable submit button
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Refresh Status Button
+        refreshStatusBtn.addEventListener('click', async () => {
+            showStatus('processing', 'Checking Status', 'Refreshing system status...');
+            await checkSystemHealth();
+            showStatus('success', 'Status Updated', 'System status has been refreshed');
+        });
+
+        // Check system health on page load
+        window.addEventListener('load', async () => {
+            await checkSystemHealth();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
