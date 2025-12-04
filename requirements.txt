@@ -10,3 +10,9 @@ spacy
 sentence-transformers
 tqdm
 joblib
+flask 
+flask-cors 
+python-dotenv 
+qdrant-client 
+sentence-transformers 
+pandas
